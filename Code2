@@ -1,0 +1,34 @@
+import string
+import random
+from random import randint as r
+
+def generate_password(length):
+    a = '' 
+    for _ in range(length):
+        if len(a) < length:
+            a = a + random.choice(list('23456789'))
+        if len(a) < length:
+            a = a + random.choice(list('abcdefghigkmnpqrstuvyxwz'))
+        if len(a) < length:
+            a = a + random.choice(list('ABCDEFGHGKLMNPQRSTUVYXWZ'))
+    return a
+ 
+def generate_passwords(count, length):
+    a = ''
+    b = []
+    for _ in range(count):
+        for _ in range(length):
+            if len(a) < length:
+                a = a + random.choice(list('23456789'))
+            if len(a) < length:
+                a = a + random.choice(list('abcdefghigkmnpqrstuvyxwz'))
+            if len(a) < length:
+                a = a + random.choice(list('ABCDEFGHGKLMNPQRSTUVYXWZ'))
+        b.append(a)
+        a = ''
+    return b
+    
+n, m = int(input()), int(input())
+
+print(generate_password(m))
+print(*generate_passwords(n, m), sep='\n')
