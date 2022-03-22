@@ -32,3 +32,6 @@ n, m = int(input()), int(input())
 
 print(generate_password(m))
 print(*generate_passwords(n, m), sep='\n')
+
+added some text in Code2:
+aldsdioqwelkasdl klsjd alksd lqjweo asdn asd lqei
